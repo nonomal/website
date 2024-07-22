@@ -1,7 +1,9 @@
 <script setup lang="ts">
-window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.website.user.js"
+window.VideoTogetherExtensionUrl = "https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js"
+
+window.VideoTogetherWebsiteExtensionUrl = "https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.website.user.js"
 function ShowAlert(str){
-  alert(str);
+  // alert(str);
   try{
   document.querySelector("#install_text").innerHTML = document.querySelector("#install_text").innerHTML + " |"+str;
   }catch{}
@@ -64,7 +66,7 @@ async function encode() {
 }
 
 async function getScript() {
-    let url = window.VideoTogetherExtensionUrl;
+    let url = window.VideoTogetherWebsiteExtensionUrl;
     let script = "";
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 3000)
@@ -82,17 +84,20 @@ async function getScript() {
 (function test(){
       const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 3000)
-  fetch("https://2gether.video/release/extension.website.user.js", { signal: controller.signal })
+  fetch("https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.website.user.js", { signal: controller.signal })
   .then(r=>{console.log(r)})
   .catch(e=>{
     let hrefs = document.getElementsByTagName("a");
 
     for (let i = 0; i <hrefs.length ; i++) {
       if(hrefs[i].href == window.VideoTogetherExtensionUrl){
-       hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+       hrefs[i].href = "https://release.chizhou.in/release/extension.user.js"
+      }
+      if(hrefs[i].href == window.VideoTogetherWebsiteExtensionUrl){
+       hrefs[i].href = "https://release.chizhou.in/release/extension.website.user.js"
       }
     }
-    window.VideoTogetherExtensionUrl = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+    window.VideoTogetherWebsiteExtensionUrl = "https://release.chizhou.in/release/extension.website.user.js"
     console.error(e);
 
   })

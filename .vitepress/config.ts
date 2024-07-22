@@ -45,6 +45,16 @@ const navEn = [
   }
 ]
 export default defineConfig({
+  head: [
+    [
+      'meta',
+      { name: "referrer", content: "no-referrer" }
+    ],
+    [
+      'meta',
+      { "http-equiv": "Content-Security-Policy", content: "upgrade-insecure-requests" }
+    ]
+  ],
   locales: {
     '/zh-cn/': {
       lang: 'zh-CN',
@@ -55,13 +65,13 @@ export default defineConfig({
     '/en-us/': {
       lang: 'en-US',
       title: 'VideoTogether',
-      description: 'Watch videos together with your family and friends, no matter how far away',
+      description: 'Watch videos online with your family and friends, no matter the distance between you',
       selectText: 'Languages',
     },
     '/': {
       lang: 'en-US',
       title: 'VideoTogether',
-      description: 'Watch videos together with your family and friends, no matter how far away',
+      description: 'Watch videos online with your family and friends, no matter the distance between you',
       selectText: 'Languages',
     }
   },
@@ -70,8 +80,8 @@ export default defineConfig({
   themeConfig: {
     localeLinks: {
       items: [
-        { text: '简体中文', link: '/zh-cn/'},
-        { text: 'English', link: '/en-us/'}
+        { text: '简体中文', link: '/zh-cn/' },
+        { text: 'English', link: '/en-us/' }
       ]
     },
     socialLinks: [
@@ -82,7 +92,7 @@ export default defineConfig({
         nav: nav,
         lastUpdatedText: "上次更新",
         footer: {
-          message: '欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group',
+          message: '欢迎加入我们的交流群。QQ群： 204015847 ，Telegram：https://t.me/videotogether_group',
           copyright: "Copyright © 2022-present VideoTogether",
         }
       },
@@ -90,7 +100,7 @@ export default defineConfig({
         nav: navEn,
         lastUpdatedText: "Last Updated",
         footer: {
-          message: 'Welcome to join our Telegram：https://t.me/videotogether_group',
+          message: 'Give feedback: https://github.com/VideoTogether/VideoTogether/issues',
           copyright: "Copyright © 2022-present VideoTogether",
         },
       },
@@ -98,7 +108,7 @@ export default defineConfig({
         nav: navEn,
         lastUpdatedText: "Last Updated",
         footer: {
-          message: 'Welcome to join our Telegram：https://t.me/videotogether_group',
+          message: 'Give feedback: https://github.com/VideoTogether/VideoTogether/issues',
           copyright: "Copyright © 2022-present VideoTogether",
         },
       }
