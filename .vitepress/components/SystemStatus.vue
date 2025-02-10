@@ -45,13 +45,13 @@
         .catch(()=>{
             document.querySelector('#SyncServerStatus').style.color='red';
         })
-    fetch("https://api.chizhou.in/statistics")
+    fetch("https://api.xn--6kr25xemln66b.com/statistics")
         .then(()=>{document.querySelector('#ChinaSyncServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#ChinaSyncServerStatus').style.color='red'})
-    fetch("https://2gether.video/release/extension.user.js")
+    fetch("https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js")
         .then(()=>{document.querySelector('#JsServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#JsServerStatus').style.color='red'})
-    fetch("https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.user.js",{mode:"no-cors"})
+    fetch("https://api.xn--6kr25xemln66b.com/release/extension.user.js",{mode:"no-cors"})
         .then(()=>{document.querySelector('#ChinaJsServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#ChinaJsServerStatus').style.color='red'})
 

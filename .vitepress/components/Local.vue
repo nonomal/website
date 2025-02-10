@@ -9,19 +9,20 @@ function getFile(e)  {
   videoUrl.value = url
 }
 
+window.videoTogetherWebsiteSettingUrl = "/v2_website.html";
+
 let script = document.createElement('script');
-script.src ='https://2gether.video/release/extension.website.user.js';
+script.src ='/release/extension.website.user.js';
 document.head.appendChild(script);
 
 </script>
 <template>
   <div style="margin: 20px;">
     <input style="" type="file" ref="file" @change="getFile($event)" />
-    <!-- <button class="btn" @click="">选择本地视频</button> -->
   </div>
 
   <div>
-    <video :src="videoUrl" style="width: 720px; height: 480px;" controls autoplay loop playsinline>你的浏览器不能支持HTML5视频</video>
+    <video :src="videoUrl" style="width: 720px; height: 480px;" controls autoplay loop playsinline></video>
   </div>
 </template>
 <style scoped>
